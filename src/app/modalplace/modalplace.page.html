@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()"> Cerrar </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div *ngIf="place">
+    <ion-card>
+      <img src="{{place.preview.source}}" alt="" />
+    </ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> {{place.address.city}} </ion-card-subtitle>
+      <ion-card-title> {{place.name}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content> {{place.wikipedia_extracts.text}} </ion-card-content>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+.swiper-slide {
+  display: block;
+  margin-bottom: 64px;
+  background-color: white;
+}
+
+ion-content {
+  margin-bottom: 10px;
+  --background: var(--ion-color-primary);
+}
+
+ion-slides {
+  background-color: white;
+  height: 100%;
+  max-width: 800px;
+}
+
+ion-slide > h3 {
+  margin: 0 0 0 0;
+  color: var(--ion-color-primary);
+}
+
+ion-slide > p {
+  font-size: 20px;
+  padding: 1em 1em 1em 1em;
+}
+
+ion-slide > ion-icon {
+  color: var(--ion-color-primary);
+  font-size: 45px;
+}
+
+ion-slide > ion-icon[name='close'] {
+  float: right;
+}

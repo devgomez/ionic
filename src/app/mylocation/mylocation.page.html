@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map
+    *ngIf="currentCenter"
+    [latitude]="currentCenter.lat"
+    [longitude]="currentCenter.lng"
+    [zoom]="defaultZoom"
+  >
+    <agm-marker
+      [latitude]="currentCenter.lat"
+      [longitude]="currentCenter.lng"
+    ></agm-marker>
+  </agm-map>
+</ion-content>

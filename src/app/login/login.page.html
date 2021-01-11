@@ -1,0 +1,59 @@
+<ion-content class="ion-padding">
+  <br /><br /><br />
+  <figure>
+    <img src="assets/images/logo-h-2.png" />
+  </figure>
+  <br /><br />
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item lines="none">
+      <ion-input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+      ></ion-input>
+    </ion-item>
+    <div class="validation-messages">
+      <ng-container *ngFor="let validation of validationMessages.email">
+        <div
+          *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)"
+        >
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item lines="none">
+      <ion-input
+        type="password"
+        formControlName="password"
+        placeholder="Contraseña"
+      ></ion-input>
+    </ion-item>
+    <div class="validation-messages">
+      <ng-container *ngFor="let validation of validationMessages.password">
+        <div
+          *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)"
+        >
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+    <br /><br /><br />
+    <div class="validation-messages">{{messageAuthenticated}}</div>
+    <ion-button
+      size="large"
+      expand="block"
+      [disabled]="!loginForm.valid"
+      type="submit"
+      >Ingresar</ion-button
+    >
+  </form>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-button
+    size="large"
+    expand="block"
+    fill="outline"
+    (click)="goToRegister()"
+    >Registrarse</ion-button
+  >
+</ion-footer>

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "firstName": "Renato",
+      "lastName": "De la Rosa",
+      "email": "srdelarosab@gmail.com",
+      "password": "cmVuYXRvMjExMw==",
+      "id": 1
+    },
+    {
+      "firstName": "Ismael Avidan",
+      "lastName": "Gomez Perez",
+      "email": "is@is.com",
+      "password": "MTIzNDU2",
+      "id": 2
+    },
+    {
+      "firstName": "Ismael Avidan",
+      "lastName": "Gomez Perez",
+      "email": "isma@cheveris.com",
+      "password": "NzE5OTU3MTU=",
+      "id": 3
+    }
+  ]
+}

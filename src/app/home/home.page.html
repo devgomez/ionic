@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="search">
+
+    <form [formGroup]="searchForm" (ngSubmit)="getPlaceSearched(searchForm.value)">
+      <ion-item>
+        <ion-input required type="text" formControlName="search" placeholder="Lugar"></ion-input>
+        <ion-button type="submit">
+          <ion-icon slot="end" name="search-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </form>
+  </div>
+  <div *ngIf="placesFound">
+    <ion-card *ngFor="let place of placesFound" (click)="showDetailPlace(place)">
+      <img src="assets/images/banner-places.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>
+          {{cityFound.name.toUpperCase()}}
+        </ion-card-subtitle>
+        <ion-card-title> {{place.name}} </ion-card-title>
+      </ion-card-header>
+      <ion-card-content> Rating: {{place.rate}} </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="countPlacesFound && !placesFound">
+    <ion-card *ngFor="let i of array">
+      <div class="img-banner-skeleton">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </div>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-skeleton-text animated style="width: 50%">{{i}}</ion-skeleton-text>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </ion-card-title>
+        <ion-card-content>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
